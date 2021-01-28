@@ -13,22 +13,19 @@ import java.util.List;
 import javax.persistence.CascadeType;
 
 @Entity
-@Table(name = "tb_poder") //Altera o nome da tabela. Nesse caso de "Poder" para "tb_poder".
+@Table(name = "tb_poder") 
 public class Poder 
 {
-	@Id //Define que o atributo abaixo é a chave primaria na tabela.
+	@Id 
 	private String nomePoder;
 	
 	@NotNull
 	private String categoria;
 	
-	@NotNull
-	private boolean utilidade;
-	
-	@OneToMany (mappedBy = "superpoder", cascade = CascadeType.ALL) //Um poder para varios mutantes.
+	@OneToMany (mappedBy = "superpoder", cascade = CascadeType.ALL) 
 	@JsonIgnoreProperties("superpoder")
-	private List<xmenformulario> infomutantes; //Atributo do tipo List que chamamos de infomutantes, e mostra todos os atributos de xmenformulario
-
+	private List<xmenformulario> infomutantes; 
+	
 	public String getNomePoder() {
 		return nomePoder;
 	}
@@ -45,13 +42,6 @@ public class Poder
 		this.categoria = categoria;
 	}
 
-	public boolean isUtilidade() {
-		return utilidade;
-	}
-
-	public void setUtilidade(boolean utilidade) {
-		this.utilidade = utilidade;
-	}
 
 	public List<xmenformulario> getInfomutantes() {
 		return infomutantes;

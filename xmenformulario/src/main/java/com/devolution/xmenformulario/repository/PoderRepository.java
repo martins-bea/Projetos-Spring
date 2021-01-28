@@ -7,10 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.devolution.xmenformulario.model.Poder;
 
-public interface PoderRepository extends JpaRepository<Poder, String>
-{
+public interface PoderRepository extends JpaRepository<Poder, String> {
 	public List<Poder> findAllByNomePoderContainingIgnoreCase(String nomePoder);
-	
-	
-	
+
 }

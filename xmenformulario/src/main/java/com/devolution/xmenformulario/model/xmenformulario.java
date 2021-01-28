@@ -29,21 +29,18 @@ public class xmenformulario
 	private String nome;
 	
 	@NotNull
-	private int idade;
-	
-	@NotNull
 	@Size (min = 3, max = 40, message = "Número de caracteres inválido.")
 	private String origem;
 	
 	@NotNull
-	@Range (min = 1, max = 5, message = "Nível de poder inválido.")
-	private int nivelPoder;	
+	@Size  (min = 3, max = 40, message = "Número de caracteres inválido.")
+	private String identidade;	
 	
 	@NotNull
 	private boolean ameaca;
 	
-	@ManyToOne //Muitos mutantes para Um Poder. Ou seja, um poder pode se repetir em varios mutantes.
-	@JsonIgnoreProperties("infomutantes")  //Tipo um Break, para tirar do loop quando rodar a aplicação.
+	@ManyToOne 
+	@JsonIgnoreProperties("infomutantes")  
 	private Poder superpoder;
 
 	public long getCodigo() {
@@ -62,14 +59,7 @@ public class xmenformulario
 		this.nome = nome;
 	}
 
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
+	
 	public String getOrigem() {
 		return origem;
 	}
@@ -78,12 +68,12 @@ public class xmenformulario
 		this.origem = origem;
 	}
 
-	public int getNivelPoder() {
-		return nivelPoder;
+	public String getidentidade() {
+		return identidade;
 	}
 
-	public void setNivelPoder(int nivelPoder) {
-		this.nivelPoder = nivelPoder;
+	public void setidentidade(String identidade) {
+		this.identidade = identidade;
 	}
 
 	public boolean isAmeaca() {

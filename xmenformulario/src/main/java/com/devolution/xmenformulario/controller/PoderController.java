@@ -19,40 +19,40 @@ import com.devolution.xmenformulario.model.Poder;
 import com.devolution.xmenformulario.repository.PoderRepository;
 
 @RestController
-@RequestMapping ("/poder")
-@CrossOrigin (origins = "*", allowedHeaders = "*")
-public class PoderController 
-{
+@RequestMapping("/poder")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public class PoderController {
 	@Autowired
 	private PoderRepository repositorioPoder;
-	
+
 	@GetMapping
 	public ResponseEntity<List<Poder>> GetAll() {
 		return ResponseEntity.ok(repositorioPoder.findAll());
 	}
-	
+
 	@GetMapping("nomepoder/{nomePoder}")
 	public List<Poder> GetByNomePoder(@PathVariable String nomePoder) {
 		return repositorioPoder.findAllByNomePoderContainingIgnoreCase(nomePoder);
 	}
-	
+
 	@PutMapping
-	public ResponseEntity<Poder> Put (@RequestBody Poder poder) {
+	public ResponseEntity<Poder> Put(@RequestBody Poder poder) {
 		return ResponseEntity.ok(repositorioPoder.save(poder));
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Poder> Post (@RequestBody Poder poder) {
+	public ResponseEntity<Poder> Post(@RequestBody Poder poder) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositorioPoder.save(poder));
 	}
-	
-	@DeleteMapping ("nomepoder/{nomePoder}")
-	public void deletarPoder (@PathVariable String nomePoder) {
+
+	@DeleteMapping("nomepoder/{nomePoder}")
+	public void deletarPoder(@PathVariable String nomePoder) {
 		repositorioPoder.deleteById(nomePoder);
 	}
-	
-	
-	
 
-	
 }
+
+
+
+
+
