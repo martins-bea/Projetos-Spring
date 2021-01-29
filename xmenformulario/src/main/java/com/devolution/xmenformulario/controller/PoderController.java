@@ -21,7 +21,9 @@ import com.devolution.xmenformulario.repository.PoderRepository;
 @RestController
 @RequestMapping("/poder")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+
 public class PoderController {
+	
 	@Autowired
 	private PoderRepository repositorioPoder;
 
@@ -51,8 +53,3 @@ public class PoderController {
 	}
 
 }
-
-
-
-
-

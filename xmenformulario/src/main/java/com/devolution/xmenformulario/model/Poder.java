@@ -13,19 +13,18 @@ import java.util.List;
 import javax.persistence.CascadeType;
 
 @Entity
-@Table(name = "tb_poder") 
-public class Poder 
-{
-	@Id 
+@Table(name = "tb_poder")
+public class Poder {
+	@Id
 	private String nomePoder;
-	
+
 	@NotNull
 	private String categoria;
-	
-	@OneToMany (mappedBy = "superpoder", cascade = CascadeType.ALL) 
+
+	@OneToMany(mappedBy = "superpoder", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("superpoder")
-	private List<xmenformulario> infomutantes; 
-	
+	private List<xmenformulario> infomutantes;
+
 	public String getNomePoder() {
 		return nomePoder;
 	}
@@ -42,7 +41,6 @@ public class Poder
 		this.categoria = categoria;
 	}
 
-
 	public List<xmenformulario> getInfomutantes() {
 		return infomutantes;
 	}
@@ -50,5 +48,5 @@ public class Poder
 	public void setInfomutantes(List<xmenformulario> infomutantes) {
 		this.infomutantes = infomutantes;
 	}
-		
+
 }

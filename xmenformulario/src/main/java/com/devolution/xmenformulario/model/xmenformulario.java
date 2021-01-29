@@ -13,34 +13,31 @@ import org.hibernate.validator.constraints.Range;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Entity 
+ 
+public class xmenformulario {
 
-//@ = Anotação
-@Entity //Define que a public class abaixo (no caso xmenformulario) é uma tabela (data base)
-//@Table Permite alterar o nome da tabela. Ex.: xmenformulario para mutantes
-public class xmenformulario 
-{
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long codigo;
-	
+
 	@NotNull
-	@Size (min = 3, max = 40, message = "Número de caracteres inválido.")
+	@Size(min = 3, max = 40, message = "Número de caracteres inválido.")
 	private String nome;
-	
+
 	@NotNull
-	@Size (min = 3, max = 40, message = "Número de caracteres inválido.")
+	@Size(min = 3, max = 40, message = "Número de caracteres inválido.")
 	private String origem;
-	
+
 	@NotNull
-	@Size  (min = 3, max = 40, message = "Número de caracteres inválido.")
-	private String identidade;	
-	
+	@Size(min = 3, max = 40, message = "Número de caracteres inválido.")
+	private String identidade;
+
 	@NotNull
 	private boolean ameaca;
-	
-	@ManyToOne 
-	@JsonIgnoreProperties("infomutantes")  
+
+	@ManyToOne
+	@JsonIgnoreProperties("infomutantes")
 	private Poder superpoder;
 
 	public long getCodigo() {
@@ -59,7 +56,6 @@ public class xmenformulario
 		this.nome = nome;
 	}
 
-	
 	public String getOrigem() {
 		return origem;
 	}
