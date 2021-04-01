@@ -1,10 +1,10 @@
-package org.generation.MinhaLojaDeGames;
+package com.eventoapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MinhaLojaDeGamesApplicationTests {
+class EventoappApplicationTests {
 
 	@Test
 	void contextLoads() {
